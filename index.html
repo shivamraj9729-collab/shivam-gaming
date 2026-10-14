@@ -5,71 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHIVAM GAMING</title>
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  margin:0;
   font-family:Arial,sans-serif;
-  background:#0b0e17;
-  color:white;
+  background:#080b14;
+  color:#fff;
 }
 header{
-  background:#151b2b;
+  padding:22px 15px;
   text-align:center;
-  padding:25px 10px;
-  border-bottom:2px solid #00e5ff;
+  background:#11182a;
+  border-bottom:2px solid #00eaff;
 }
-header h1{color:#00e5ff;margin:0}
-header p{color:#bbb}
-main{max-width:600px;margin:auto;padding:20px}
-.card{
-  background:#171e30;
-  padding:20px;
+header h1{
+  color:#00eaff;
+  font-size:30px;
+  text-shadow:0 0 15px #00eaff;
+}
+header p{margin-top:8px;color:#bbb}
+nav{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  padding:15px 5px;
+  background:#0d1220;
+}
+nav a{color:white;text-decoration:none;font-weight:bold}
+nav a:hover{color:#00eaff}
+.hero{
+  text-align:center;
+  padding:65px 18px;
+  background:linear-gradient(135deg,#17113b,#101a35,#351023);
+}
+.hero .tag{color:#00eaff;letter-spacing:3px}
+.hero h2{
+  font-size:38px;
   margin:20px 0;
-  border-radius:15px;
-  border:1px solid #303c55;
+  line-height:1.15;
 }
-h2{color:#00e5ff}
-.prize{font-size:24px;color:#36ff88;font-weight:bold}
-button{
-  width:100%;
-  padding:14px;
-  background:#00e5ff;
-  border:0;
-  border-radius:8px;
-  font-size:17px;
+.hero h2 span{color:#ffb52e}
+.hero p{color:#d0d3df;line-height:1.7}
+.button{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 25px;
+  background:#00eaff;
+  color:#07101b;
+  border-radius:7px;
+  text-decoration:none;
   font-weight:bold;
 }
-footer{text-align:center;color:#aaa;padding:25px}
+main{max-width:750px;margin:auto;padding:20px}
+.card{
+  background:#121a2b;
+  border:1px solid #273852;
+  padding:23px;
+  margin:20px 0;
+  border-radius:14px;
+}
+.card h2{color:#00eaff;margin-bottom:17px}
+.card p{line-height:1.9;color:#ddd}
+.prize{font-size:25px;color:#ffca47;font-weight:bold}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  background:#173d3e;
+  color:#68ffe0;
+  border-radius:5px;
+  margin-bottom:15px;
+}
+footer{
+  text-align:center;
+  padding:25px 15px;
+  background:#11182a;
+  color:#aaa;
+  line-height:1.8;
+}
+@media(max-width:400px){
+ .hero h2{font-size:30px}
+ nav{gap:13px;font-size:14px}
+}
 </style>
 </head>
 <body>
+
 <header>
-  <h1>🎮 SHIVAM GAMING</h1>
-  <p>Free Fire Tournament Community</p>
+  <h1>⚡ SHIVAM GAMING</h1>
+  <p>YOUR GAME. YOUR GLORY.</p>
 </header>
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#tournament">TOURNAMENT</a>
+  <a href="#results">RESULTS</a>
+</nav>
+
+<section class="hero" id="home">
+  <p class="tag">PLAY • COMPETE • WIN</p>
+  <h2>WELCOME TO<br><span>SHIVAM GAMING</span></h2>
+  <p>Enter the arena. Show your skills.<br>Become a gaming legend!</p>
+  <a href="#tournament" class="button">EXPLORE TOURNAMENTS</a>
+</section>
+
 <main>
-  <section class="card">
-    <h2>🔥 Welcome, Gamers!</h2>
-    <p>Welcome to SHIVAM GAMING.</p>
-    <p>Join our Free Fire gaming community.</p>
-  </section>
-  <section class="card">
+  <section class="card" id="tournament">
+    <span class="badge">🎮 FREE FIRE COMMUNITY</span>
     <h2>🏆 Tournament Details</h2>
     <p>Game: Free Fire</p>
     <p>Mode: Solo</p>
     <p>Entry Fee: ₹20 (planned)</p>
     <p class="prize">Winner Prize: ₹100 (planned)</p>
     <p>Registration is currently closed.</p>
-    <button disabled>Registration Coming Soon</button>
+    <p>No payment or registration is being accepted on this demo website.</p>
   </section>
+
+  <section class="card" id="results">
+    <h2>🥇 Tournament Results</h2>
+    <p>Winner: Not announced yet</p>
+    <p>Official results will be published here.</p>
+  </section>
+
   <section class="card">
-    <h2>📢 Results</h2>
-    <p>Winner has not been announced yet.</p>
+    <h2>🔥 Our Mission</h2>
+    <p>SHIVAM GAMING is a community project for gamers who love competition, teamwork and fair play.</p>
+    <p>Play fair. Respect every player. Have fun!</p>
   </section>
 </main>
+
 <footer>
-  <p>SHIVAM GAMING © 2026</p>
+  <p>⚡ SHIVAM GAMING</p>
   <p>Independent community project; not affiliated with Garena.</p>
+  <p>© 2026 SHIVAM GAMING</p>
 </footer>
+
 </body>
-  </html>
+</html>
