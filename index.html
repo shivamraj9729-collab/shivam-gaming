@@ -3,140 +3,453 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHIVAM GAMING</title>
+<title>SHIVAM GAMING | Esports Arena</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Arial,sans-serif;
-  background:#080b14;
-  color:#fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-header{
-  padding:22px 15px;
-  text-align:center;
-  background:#11182a;
-  border-bottom:2px solid #00eaff;
+
+:root {
+  --cyan: #00f5ff;
+  --purple: #a855f7;
+  --bg: #060817;
+  --card: #10152b;
 }
-header h1{
-  color:#00eaff;
-  font-size:30px;
-  text-shadow:0 0 15px #00eaff;
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: white;
+  overflow-x: hidden;
 }
-header p{margin-top:8px;color:#bbb}
-nav{
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  padding:15px 5px;
-  background:#0d1220;
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 15% 20%, #073b4c 0%, transparent 38%),
+    radial-gradient(ellipse at 90% 60%, #351052 0%, transparent 35%),
+    #060817;
 }
-nav a{color:white;text-decoration:none;font-weight:bold}
-nav a:hover{color:#00eaff}
-.hero{
-  text-align:center;
-  padding:65px 18px;
-  background:linear-gradient(135deg,#17113b,#101a35,#351023);
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  border-bottom: 1px solid #1b3550;
+  background: rgba(6, 8, 23, .9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
 }
-.hero .tag{color:#00eaff;letter-spacing:3px}
-.hero h2{
-  font-size:38px;
-  margin:20px 0;
-  line-height:1.15;
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--cyan);
+  text-shadow: 0 0 15px #00f5ff88;
 }
-.hero h2 span{color:#ffb52e}
-.hero p{color:#d0d3df;line-height:1.7}
-.button{
-  display:inline-block;
-  margin-top:25px;
-  padding:14px 25px;
-  background:#00eaff;
-  color:#07101b;
-  border-radius:7px;
-  text-decoration:none;
-  font-weight:bold;
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 12px;
 }
-main{max-width:750px;margin:auto;padding:20px}
-.card{
-  background:#121a2b;
-  border:1px solid #273852;
-  padding:23px;
-  margin:20px 0;
-  border-radius:14px;
+
+nav a:hover {
+  color: var(--cyan);
 }
-.card h2{color:#00eaff;margin-bottom:17px}
-.card p{line-height:1.9;color:#ddd}
-.prize{font-size:25px;color:#ffca47;font-weight:bold}
-.badge{
-  display:inline-block;
-  padding:6px 10px;
-  background:#173d3e;
-  color:#68ffe0;
-  border-radius:5px;
-  margin-bottom:15px;
+
+.hero {
+  min-height: 590px;
+  padding: 85px 7% 65px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-footer{
-  text-align:center;
-  padding:25px 15px;
-  background:#11182a;
-  color:#aaa;
-  line-height:1.8;
+
+.hero::after {
+  content: "⚡";
+  position: absolute;
+  right: 5%;
+  top: 90px;
+  font-size: clamp(170px, 32vw, 340px);
+  color: #00f5ff0b;
+  text-shadow: 0 0 70px #00f5ff20;
+  z-index: -1;
 }
-@media(max-width:400px){
- .hero h2{font-size:30px}
- nav{gap:13px;font-size:14px}
+
+.tag {
+  display: inline-block;
+  color: var(--cyan);
+  border: 1px solid #00f5ff77;
+  padding: 8px 13px;
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(43px, 9vw, 85px);
+  line-height: .98;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: var(--cyan);
+  text-shadow: 0 0 25px #00f5ff55;
+}
+
+.hero p {
+  color: #aab6d0;
+  line-height: 1.8;
+  margin: 24px 0;
+  max-width: 470px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  background: var(--cyan);
+  color: #061019;
+  font-weight: 900;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+  box-shadow: 0 0 25px #00f5ff30;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px #00f5ff70;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  margin-left: 8px;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+.section-label {
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(27px, 5vw, 42px);
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  color: #93a0bd;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(145deg, #131b35, #0a0e20);
+  border: 1px solid #263653;
+  border-radius: 10px;
+  padding: 25px;
+  transition: .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+  box-shadow: 0 0 25px #00f5ff15;
+}
+
+.card-icon {
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+.badge {
+  display: inline-block;
+  background: #00f5ff15;
+  color: var(--cyan);
+  border: 1px solid #00f5ff55;
+  padding: 6px 9px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #a5b0c9;
+  line-height: 1.8;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  margin: 20px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: #aab6d0;
+  margin: 12px 0;
+}
+
+.info-row strong {
+  color: white;
+  text-align: right;
+}
+
+.status {
+  color: #ffca6b;
+}
+
+.mission {
+  border: 1px solid #42316b;
+  background: linear-gradient(110deg, #17112c, #0d142b);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.mission-icon {
+  font-size: 48px;
+}
+
+.mission h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.mission p {
+  color: #a5b0c9;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer {
+  padding: 35px 7%;
+  border-top: 1px solid #1b3550;
+  text-align: center;
+  color: #8290ac;
+  font-size: 12px;
+  line-height: 2;
+}
+
+footer strong {
+  color: var(--cyan);
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 17px 5%;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 75px 6%;
+    min-height: 520px;
+  }
+
+  section {
+    padding: 50px 6%;
+  }
+
+  .btn {
+    padding: 13px 15px;
+    font-size: 11px;
+  }
+
+  .mission {
+    align-items: flex-start;
+    padding: 22px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>⚡ SHIVAM GAMING</h1>
-  <p>YOUR GAME. YOUR GLORY.</p>
+  <div class="logo">⚡ SHIVAM GAMING</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#tournament">ARENA</a>
+    <a href="#results">RESULTS</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="#home">HOME</a>
-  <a href="#tournament">TOURNAMENT</a>
-  <a href="#results">RESULTS</a>
-</nav>
-
-<section class="hero" id="home">
-  <p class="tag">PLAY • COMPETE • WIN</p>
-  <h2>WELCOME TO<br><span>SHIVAM GAMING</span></h2>
-  <p>Enter the arena. Show your skills.<br>Become a gaming legend!</p>
-  <a href="#tournament" class="button">EXPLORE TOURNAMENTS</a>
-</section>
-
 <main>
-  <section class="card" id="tournament">
-    <span class="badge">🎮 FREE FIRE COMMUNITY</span>
-    <h2>🏆 Tournament Details</h2>
-    <p>Game: Free Fire</p>
-    <p>Mode: Solo</p>
-    <p>Entry Fee: ₹20 (planned)</p>
-    <p class="prize">Winner Prize: ₹100 (planned)</p>
-    <p>Registration is currently closed.</p>
-    <p>No payment or registration is being accepted on this demo website.</p>
+  <div class="hero" id="home">
+    <div>
+      <div class="tag">NEXT LEVEL GAMING EXPERIENCE</div>
+
+      <h1>ENTER THE<br><span>BATTLE.</span></h1>
+
+      <p>
+        Welcome to SHIVAM GAMING — a gaming community
+        built for competitive players, epic matches and
+        unforgettable victories.
+      </p>
+
+      <a class="btn" href="#tournament">EXPLORE ARENA ↗</a>
+      <a class="btn btn-outline" href="#about">OUR MISSION</a>
+    </div>
+  </div>
+
+  <section id="tournament">
+    <div class="section-label">01 / COMPETE</div>
+    <h2 class="section-title">TOURNAMENT ARENA</h2>
+    <p class="section-desc">
+      Explore our tournament section. Demo information only.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <div class="badge">FREE FIRE COMMUNITY</div>
+        <h3>Solo Showdown</h3>
+        <p>Show your skills and compete with other players
+        in our community gaming events.</p>
+
+        <div class="divider"></div>
+
+        <div class="info-row">
+          <span>Game Mode</span>
+          <strong>Solo</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Entry</span>
+          <strong>Demo / Free</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Registration</span>
+          <strong class="status">Not Open</strong>
+        </div>
+
+        <div class="divider"></div>
+        <a class="btn" href="#about">EVENT INFO</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <div class="badge">COMING SOON</div>
+        <h3>Squad Battles</h3>
+        <p>Team up with your friends and get ready
+        for future community challenges.</p>
+
+        <div class="divider"></div>
+
+        <div class="info-row">
+          <span>Format</span>
+          <strong>Squad</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Status</span>
+          <strong class="status">Coming Soon</strong>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="card" id="results">
-    <h2>🥇 Tournament Results</h2>
-    <p>Winner: Not announced yet</p>
-    <p>Official results will be published here.</p>
+  <section id="results">
+    <div class="section-label">02 / LEADERBOARD</div>
+    <h2 class="section-title">MATCH RESULTS</h2>
+    <p class="section-desc">
+      Official community results will appear here
+      after verified events have taken place.
+    </p>
+
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <h3>No Results Yet</h3>
+      <p>Our leaderboard is waiting for its first
+      completed community event.</p>
+      <div class="divider"></div>
+      <span class="badge">LEADERBOARD COMING SOON</span>
+    </div>
   </section>
 
-  <section class="card">
-    <h2>🔥 Our Mission</h2>
-    <p>SHIVAM GAMING is a community project for gamers who love competition, teamwork and fair play.</p>
-    <p>Play fair. Respect every player. Have fun!</p>
+  <section id="about">
+    <div class="section-label">03 / OUR VISION</div>
+    <h2 class="section-title">PLAY. IMPROVE. WIN.</h2>
+    <p class="section-desc">
+      A community made for gaming enthusiasts.
+    </p>
+
+    <div class="mission">
+      <div class="mission-icon">⚡</div>
+      <div>
+        <h3>Our Mission</h3>
+        <p>
+          SHIVAM GAMING is an independent gaming
+          community project. Our goal is to create
+          a friendly space for players to connect,
+          improve their skills and enjoy gaming.
+        </p>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p>⚡ SHIVAM GAMING</p>
-  <p>Independent community project; not affiliated with Garena.</p>
-  <p>© 2026 SHIVAM GAMING</p>
+  <strong>⚡ SHIVAM GAMING</strong><br>
+  Built for the gaming community.<br>
+  This is an independent fan project and is not
+  affiliated with or endorsed by Garena or Free Fire.<br>
+  © 2026 SHIVAM GAMING
 </footer>
 
 </body>
-</html>
+  </html>
